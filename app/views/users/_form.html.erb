@@ -30,8 +30,28 @@
     <%= f.label :birthdate %>
     <%= f.date_select :birthdate %>
   </div>
+  <%= f.fields_for :addresses do |a| %>
+      <h3>Addresses: </h3>
+      <div class="field">
+        <%= a.label :kind %>
+        <%= a.text_field :kind %>
+      </div>
+      <div class="field">
+        <%= a.label :city %>
+        <%= a.text_field :city %>  
+      </div>
+      <div class="field">
+        <%= a.label :street %>
+        <%= a.text_field :street %>  
+      </div>
+      <div class="field">
+        <%= a.label :destroy %>
+        <%= a.check_box :_destroy %>  
+      </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+ 
